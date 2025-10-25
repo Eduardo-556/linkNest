@@ -13,7 +13,9 @@ export default function Index() {
           <MaterialIcons name="add" size={32} color={colors.green[300]} />
         </TouchableOpacity>
       </View>
-      <Category />
+      <Category name="Cursos" icon="code" isSelected={true} />
+      <Category name="Inglês" icon="language" isSelected={false} />
+      <Category name="Vídeos" icon="ondemand-video" isSelected={false} />
     </View>
   );
 }
