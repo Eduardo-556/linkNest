@@ -1,8 +1,8 @@
 import { FlatList } from "react-native";
 
+import { styles } from "@/components/categories/styles";
 import { Category } from "@/components/category";
 import { categories } from "@/utils/categories";
-import { styles } from "./style";
 
 export function Categories() {
   return (
