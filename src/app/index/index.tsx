@@ -1,5 +1,6 @@
 import { Categories } from "@/components/categories";
 import { Link } from "@/components/link";
+import { Option } from "@/components/option";
 import { colors } from "@/styles/colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import {
@@ -54,6 +55,10 @@ export default function Index() {
 
             <Text style={styles.modalLinkName}>MyPanicFull</Text>
             <Text style={styles.modalUrl}>https://mypanicfull.com</Text>
+            <View style={styles.modalFooter}>
+              <Option name="Excluir" icon="delete" variant="secondary" />
+              <Option name="Abrir" icon="language" />
+            </View>
           </View>
         </View>
       </Modal>
