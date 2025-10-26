@@ -1,3 +1,4 @@
+import styles from "@/app/index/styles";
 import { Categories } from "@/components/categories";
 import { Link } from "@/components/link";
 import { Option } from "@/components/option";
@@ -11,7 +12,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import styles from "./styles";
 
 export default function Index() {
   return (
