@@ -1,4 +1,4 @@
-import styles from "@/app/index/_styles";
+import styles from "@/app/_styles";
 import { Categories } from "@/components/categories";
 import { Link } from "@/components/link";
 import { Option } from "@/components/option";
@@ -6,8 +6,8 @@ import { linkStorage, LinkStorage } from "@/storage/link-storage";
 import { colors } from "@/styles/colors";
 import { categories } from "@/utils/categories";
 import { MaterialIcons } from "@expo/vector-icons";
-import { router } from "expo-router";
-import { useEffect, useState } from "react";
+import { router, useFocusEffect } from "expo-router";
+import { useCallback, useState } from "react";
 import {
   Alert,
   FlatList,
@@ -30,10 +30,12 @@ export default function Index() {
       Alert.alert("Erro", "Não foi possível listar os links.");
     }
   }
+  useFocusEffect(
+    useCallback(() => {
+      getLinks();
+    }, [])
+  );
 
-  useEffect(() => {
-    getLinks();
-  }, [category]);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
