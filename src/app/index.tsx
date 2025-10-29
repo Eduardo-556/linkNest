@@ -19,6 +19,8 @@ import {
 } from "react-native";
 
 export default function Index() {
+  const [showModal, setShowModal] = useState(false);
+  const [link, setLink] = useState({} as LinkStorage);
   const [category, setCategory] = useState(categories[0].name);
   const [links, setLinks] = useState<LinkStorage[]>([]);
 
@@ -31,6 +33,12 @@ export default function Index() {
       Alert.alert("Erro", "Não foi possível listar os links.");
     }
   }
+
+  function handleDetails(selected: LinkStorage) {
+    setShowModal(true);
+    setLink(selected);
+  }
+
   useFocusEffect(
     useCallback(() => {
       getLinks();
@@ -54,7 +62,7 @@ export default function Index() {
           <Link
             name={item.name}
             url={item.url}
-            onDetails={() => console.log("clicou!!")}
+            onDetails={() => handleDetails(item)}
           />
         )}
         style={styles.links}
@@ -62,12 +70,17 @@ export default function Index() {
         showsVerticalScrollIndicator={false}
       />
 
-      <Modal transparent visible={false}>
+      <Modal
+        transparent
+        visible={showModal}
+        animationType="slide"
+        statusBarTranslucent={true}
+      >
         <View style={styles.modal}>
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
-              <Text style={styles.modalCategory}>Curso</Text>
-              <TouchableOpacity>
+              <Text style={styles.modalCategory}>{link.category}</Text>
+              <TouchableOpacity onPress={() => setShowModal(false)}>
                 <MaterialIcons
                   name="close"
                   size={20}
@@ -76,8 +89,8 @@ export default function Index() {
               </TouchableOpacity>
             </View>
 
-            <Text style={styles.modalLinkName}>MyPanicFull</Text>
-            <Text style={styles.modalUrl}>https://mypanicfull.com</Text>
+            <Text style={styles.modalLinkName}>{link.name}</Text>
+            <Text style={styles.modalUrl}>{link.url}</Text>
             <View style={styles.modalFooter}>
               <Option name="Excluir" icon="delete" variant="secondary" />
               <Option name="Abrir" icon="language" />

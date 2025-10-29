@@ -1,5 +1,5 @@
 import { colors } from "@/styles/colors";
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.gray[900],
     borderTopWidth: 1,
     borderTopColor: colors.gray[800],
-    paddingBottom: 42,
+    paddingBottom: Platform.OS === "android" ? 42 + 24 : 42,
     padding: 22,
   },
   modalHeader: {
@@ -71,6 +71,8 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: colors.gray[600],
     paddingVertical: 14,
+    backgroundColor: colors.gray[900],
+    padding: Platform.OS === "android" ? 14 + 24 : 14,
   },
 });
 

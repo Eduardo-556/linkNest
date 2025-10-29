@@ -11,7 +11,8 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#09090B"
+      "backgroundColor": "#09090B",
+      "barStyle": "light-content"
     },
     "ios": {
       "supportsTablet": true
@@ -20,6 +21,13 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#09090B"
+      },
+      "softwareKeyboardLayoutMode": "pan",
+      "navigationBarColor": "#09090B",
+      "navigationBar": {
+        "backgroundColor": "#09090B",
+        "barStyle": "light-content",
+        "visible": true
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
