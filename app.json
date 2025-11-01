@@ -30,16 +30,25 @@
         "visible": true
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.linkNest"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/logo.png"
     },
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router"
+    ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "ddbb40c1-d075-4265-9a8d-54eba5f1fcc6"
+      }
     }
   }
 }
