@@ -30,9 +30,9 @@ Siga as instruções abaixo para configurar e executar o projeto em seu ambiente
 
 ### Instalação
 
-1.  Clone o repositório (lembre-se de substituir pela URL do seu repositório no GitHub):
+1.  Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
+    git clone https://github.com/Eduardo-556/linkNest.git
     ```
 2.  Navegue até o diretório do projeto:
     ```bash
