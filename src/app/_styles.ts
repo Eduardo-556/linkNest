@@ -16,11 +16,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 32,
+    marginBottom: 16,
   },
   logo: {
-    height: 32,
-    width: 38,
+    height: 64,
+    width: 64,
   },
   links: {
     borderTopWidth: 1,
